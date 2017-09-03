@@ -6,6 +6,11 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import time
+import os.path
+
+# Construct the path to the outputfile
+path = os.path.abspath('..')
+print (path)
 
 # Construct the URL for the request in a loop
 page_number = ()
@@ -22,7 +27,7 @@ for page_number in range(55, 56):
     for tag in line_list:
         word_list.append(tag.string)
     # Write the list to a file
-    with open('wordlist_for_tum_turbo.txt', 'a') as fh_wordlist_output:
+    with open(path + '/data/five_letter_word_list_python.txt', 'a') as fh_wordlist_output:
         for word in word_list:
             fh_wordlist_output.write(word + '\n')
     # Print page_number to keep track where to start after a timeout
