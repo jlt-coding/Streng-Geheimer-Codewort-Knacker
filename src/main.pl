@@ -5,7 +5,7 @@ use Path::Tiny;
 # Define variables
 my $data_path = path('..')->absolute . '/data';
 my @word_list;
-my $lettercount = 0;
+my $lettercount = -1;
 my $input;
 my @letterlist;
 
